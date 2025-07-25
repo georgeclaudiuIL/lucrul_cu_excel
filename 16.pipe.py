@@ -47,3 +47,8 @@ def remove_columns(data):
 def load_data(data):
 
     data.to_excel("overdue_users.xlsx", index=False)
+
+
+df = extract_user_data('users_rentals.xlsx').pipe(filter_users).pipe(sort_data).pipe(add_new_column).pipe(remove_columns)
+
+load_data(df)
